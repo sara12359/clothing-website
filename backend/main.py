@@ -1,6 +1,7 @@
 import asyncio
+import os
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -17,29 +18,28 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Mount static files (we will put CSS, JS, and HTML in the root or a static folder)
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# Define paths
+FRONTEND_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "frontend")
 
-# Serve HTML files directly from root folder
-@app.get("/", response_class=HTMLResponse)
+# Mount static files
+app.mount("/static", StaticFiles(directory=os.path.join(FRONTEND_DIR, "static")), name="static")
+
+# Serve HTML files directly from frontend folder
+@app.get("/", response_class=FileResponse)
 async def get_index():
-    with open("index.html", "r", encoding="utf-8") as f:
-        return f.read()
+    return FileResponse(os.path.join(FRONTEND_DIR, "index.html"))
 
-@app.get("/about.html", response_class=HTMLResponse)
+@app.get("/about.html", response_class=FileResponse)
 async def get_about():
-    with open("about.html", "r", encoding="utf-8") as f:
-        return f.read()
+    return FileResponse(os.path.join(FRONTEND_DIR, "about.html"))
 
-@app.get("/contact.html", response_class=HTMLResponse)
+@app.get("/contact.html", response_class=FileResponse)
 async def get_contact():
-    with open("contact.html", "r", encoding="utf-8") as f:
-        return f.read()
+    return FileResponse(os.path.join(FRONTEND_DIR, "contact.html"))
 
-@app.get("/checkout.html", response_class=HTMLResponse)
+@app.get("/checkout.html", response_class=FileResponse)
 async def get_checkout():
-    with open("checkout.html", "r", encoding="utf-8") as f:
-        return f.read()
+    return FileResponse(os.path.join(FRONTEND_DIR, "checkout.html"))
 
 
 # --- Pydantic Models ---
