@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURELIA | Luxury Fashion</title>
+    <meta name="description" content="AURELIA - Pinnacle of luxury fashion. Exquisite craftsmanship and exclusive materials.">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="mainHeader">
+        <a href="/" class="brand">AURELIA</a>
+        <nav>
+            <ul>
+                <li><a href="/">Shop</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+    </header>
+
+    <!-- Slide-out Cart -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <a href="/checkout.html" class="btn checkout-btn">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="fade-in">Elegance Redefined</h1>
+            <p class="fade-in" style="transition-delay: 0.2s">Discover our new collection of meticulously crafted luxury garments.</p>
+            <a href="#shop" class="btn fade-in" style="transition-delay: 0.4s">Explore Collection</a>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products-section" id="shop">
+            <h2 class="section-title fade-in">The Collection</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products injected by JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Chat FAB & Window -->
+    <div class="chat-fab" id="chatFab">
+        <i class="fas fa-comment-alt"></i>
+    </div>
+    
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <h4>AURELIA Concierge</h4>
+            <span class="close-chat" id="closeChat">&times;</span>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">Welcome to AURELIA. I am your personal concierge. How may I assist you with our luxury collection today?</div>
+        </div>
+        <form class="chat-input" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off">
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>AURELIA</h4>
+                <p>The pinnacle of high-end fashion and editorial design.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/">Shop</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 AURELIA. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

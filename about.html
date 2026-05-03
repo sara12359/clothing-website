@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | AURELIA</title>
+    <meta name="description" content="Discover the story behind AURELIA, the pinnacle of luxury fashion.">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-hero {
+            height: 60vh;
+            background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            position: relative;
+        }
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        .about-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        .about-content {
+            padding: 5rem 5%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about-content h2 {
+            margin-bottom: 2rem;
+            color: var(--color-gold);
+        }
+        .about-content p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .story-img {
+            width: 100%;
+            height: auto;
+            margin: 3rem 0;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="mainHeader">
+        <a href="/" class="brand">AURELIA</a>
+        <nav>
+            <ul>
+                <li><a href="/">Shop</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+    </header>
+
+    <!-- Slide-out Cart -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <span class="close-cart" id="closeCart">&times;</span>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <a href="/checkout.html" class="btn checkout-btn">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section class="about-hero">
+            <div class="about-hero-content fade-in">
+                <h1>Our Story</h1>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <h2 class="fade-in">A Legacy of Elegance</h2>
+            <p class="fade-in" style="transition-delay: 0.1s">
+                Founded with a vision to redefine modern luxury, AURELIA bridges the gap between classic artistry and contemporary design. Every piece is a testament to our unwavering commitment to quality, meticulously crafted from the finest materials globally sourced.
+            </p>
+            <img src="https://images.unsplash.com/photo-1550614000-4b95dd26cc06?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Craftsmanship" class="story-img fade-in" style="transition-delay: 0.2s">
+            <h2 class="fade-in" style="transition-delay: 0.3s">The Artisanal Process</h2>
+            <p class="fade-in" style="transition-delay: 0.4s">
+                Our atelier is home to generations of master tailors. From the initial sketch to the final stitch, we ensure that perfection is woven into the very fabric of our collections. We utilize Italian silk and hand-sourced cashmere to offer unparalleled comfort and sophistication.
+            </p>
+        </section>
+    </main>
+
+    <!-- Chat FAB & Window -->
+    <div class="chat-fab" id="chatFab">
+        <i class="fas fa-comment-alt"></i>
+    </div>
+    
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <h4>AURELIA Concierge</h4>
+            <span class="close-chat" id="closeChat">&times;</span>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">Welcome to AURELIA. I am your personal concierge. How may I assist you with our luxury collection today?</div>
+        </div>
+        <form class="chat-input" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off">
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>AURELIA</h4>
+                <p>The pinnacle of high-end fashion and editorial design.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/">Shop</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 AURELIA. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
