@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | AURELIA</title>
+    <meta name="description" content="Secure checkout for your AURELIA luxury selections.">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="mainHeader">
+        <a href="/" class="brand">AURELIA</a>
+        <nav>
+            <ul>
+                <li><a href="/">Shop</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+        <!-- No cart icon here to minimize distractions during checkout, or keep it consistent -->
+        <div class="cart-icon" id="cartIcon" style="visibility: hidden;">
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="contact-hero fade-in" style="height: 30vh;">
+            <div class="contact-hero-content">
+                <h1>Secure Checkout</h1>
+            </div>
+        </section>
+
+        <section class="checkout-section fade-in" style="transition-delay: 0.2s" id="checkoutSection">
+            <div id="checkoutContent" style="display: contents;">
+                <div class="checkout-form">
+                    <h3>Billing & Shipping Details</h3>
+                    <form id="checkoutForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardDetails">Card Details (Simulation)</label>
+                            <input type="text" id="cardDetails" placeholder="1234 5678 9101 1121" required>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Complete Purchase</button>
+                    </form>
+                </div>
+                
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div id="checkoutSummary">
+                        <!-- JS injects summary here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loader / Success Message -->
+            <div id="checkoutLoader" class="checkout-loader" style="grid-column: 1 / -1;">
+                <div class="spinner"></div>
+                <p>Processing your secure payment...</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chat FAB & Window -->
+    <div class="chat-fab" id="chatFab">
+        <i class="fas fa-comment-alt"></i>
+    </div>
+    
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <h4>AURELIA Concierge</h4>
+            <span class="close-chat" id="closeChat">&times;</span>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">Welcome to AURELIA. I am your personal concierge. How may I assist you with our luxury collection today?</div>
+        </div>
+        <form class="chat-input" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off">
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>AURELIA</h4>
+                <p>The pinnacle of high-end fashion and editorial design.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/">Shop</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 AURELIA. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
